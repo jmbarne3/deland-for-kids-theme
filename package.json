@@ -8,6 +8,7 @@
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-clean-css": "^3.4.0",
+    "gulp-readme-to-markdown": "^0.2.1",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-scss-lint": "^0.4.0",

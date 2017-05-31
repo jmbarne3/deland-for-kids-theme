@@ -6,6 +6,7 @@ var gulp         = require('gulp'),
     cleanCSS     = require('gulp-clean-css'),
     autoprefixer = require('gulp-autoprefixer'),
     rename       = require('gulp-rename'),
+    readme       = require('gulp-readme-to-markdown'),
     runSequence  = require('run-sequence');
 
 var configLocal   = require('./gulp-config.json'),
@@ -62,6 +63,15 @@ gulp.task('scss-build-frontend', function() {
 });
 
 gulp.task('scss-build', ['scss-lint', 'scss-build-frontend']);
+
+gulp.task('readme', function() {
+  gulp.src('./readme.txt')
+    .pipe(readme({
+      details: false,
+      screenshot_ext: []
+    }))
+    .pipe(gulp.dest('.'));
+});
 
 gulp.task('watch', function() {
   if (config.sync) {
