@@ -5,11 +5,15 @@
 function __init__() {
     add_theme_support( 'menus' );
     add_theme_support( 'post_thumbnails' );
+    add_theme_support( 'custom-header', array(
+        'width' => 1600,
+        'height' => 450
+    ) );
 
-    register_nav_menu( 'main-menu', __( 'Main Menu' ) );
+    register_nav_menu( 'header-menu', __( 'Header Menu' ) );
 }
 
-add_action( 'after_theme_setup', '__init__' );
+add_action( 'after_setup_theme', '__init__' );
 
 function enqueue_frontend_assets() {
     // Javascripts
